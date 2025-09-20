@@ -1,0 +1,104 @@
+:root {
+  --main-color: #ff206e;
+}
+html {
+  scroll-padding: 56px;
+}
+body {
+  font-family: "Bebas Neue", sans-serif !important;
+}
+a.nav-link.active {
+  color: var(--main-color) !important;
+  position: relative;
+}
+a.nav-link.active::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color) !important;
+  width: 100%;
+  height: 2px;
+  top: 100%;
+  right: 0;
+}
+.header {
+  background-image: url("../images/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.header div h1 {
+  font-size: 5rem;
+}
+.header div a {
+  color: var(--main-color);
+}
+.header ul li a {
+  color: white;
+  text-decoration: none;
+}
+.header ul li div {
+  width: 50px;
+  height: 50px;
+}
+
+/* Portfolio */
+h2 {
+  position: relative;
+  z-index: 0;
+}
+h2::after {
+  content: attr(data-content);
+  font-size: 5rem;
+  color: rgba(211, 211, 211, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Services */
+.Services {
+  background-image: url("../images/dark_dot.jpg");
+}
+.service-item {
+  position: relative;
+}
+.service-item h3 {
+  position: relative;
+}
+.service-item h3::after {
+  content: "";
+  width: 10%;
+  height: 3px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  transition: all 1s;
+}
+.service-icon {
+  background-color: black;
+  width: 30px;
+  border: 3px white solid;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+}
+
+.service-item:hover h3::after {
+  width: 40%;
+}
+
+.service-item:hover .service-icon {
+  color: var(--main-color);
+}
